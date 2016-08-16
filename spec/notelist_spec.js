@@ -20,7 +20,6 @@ function returnsNotesFromList() {
   var note2 = new Note;
   notelist.notes = [note1, note2];
   isTrue(notelist.getNotes() == notelist.notes);
-
 }
 
 listContainsEmptyArray();
