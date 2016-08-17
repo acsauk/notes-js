@@ -11,22 +11,12 @@ testANoteListModleIsBeingTakenOfUponInstantiation();
 function testAnHtmlStringIsReturnedWhenCallingGetView(){
   var list           = new ListOfNotes();
   list.createNote('Hey');
-  list.createNote('Helloe');
+  list.createNote('Hello');
   var listToBeViewed = new NoteListView(list);
   var htmlString;
-  htmlString = "<ul><li><div>Hey<li><div> <li><div>Helloe<li><div></ul>"
+  htmlString = "<ul><li><div>Hey</li></div> <li><div>Hello</li></div></ul>"
   if (listToBeViewed.getView() !== htmlString){
     throw new Error('There is no list to view');
   }
 };
 testAnHtmlStringIsReturnedWhenCallingGetView();
-
-// var arr = [];
-// var str;
-//
-//
-// list.notes.forEach(function(note){
-// arr.push('<li><div>'+note.getTxt()+'<li><div>')
-// });
-// str = arr.join(' ');
-// retuned = '<ul>' + str + '</ul>';
