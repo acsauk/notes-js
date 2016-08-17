@@ -1,7 +1,14 @@
-function Note (txt){
-  this.txt = txt;
-};
+(function(exports){
 
-Note.prototype.getTxt = function () {
-  return this.txt;
-};
+  function Note (txt){
+    this.txt = txt;
+  };
+
+  Note.prototype.getTxt = function () {
+    return this.txt;
+  };
+
+  exports.Note = Note;
+
+
+})(this);

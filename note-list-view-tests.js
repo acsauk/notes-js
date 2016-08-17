@@ -1,5 +1,5 @@
 function testANoteListModleIsBeingTakenOfUponInstantiation(){
-  var list           = new ListOfNotes();
+  var list           = new NotesList();
   var listToBeViewed = new NoteListView(list);
   if (listToBeViewed.list === undefined ){
     throw new Error('There is no list to view');
@@ -9,7 +9,7 @@ testANoteListModleIsBeingTakenOfUponInstantiation();
 
 
 function testAnHtmlStringIsReturnedWhenCallingGetView(){
-  var list           = new ListOfNotes();
+  var list           = new NotesList();
   list.createNote('Hey');
   list.createNote('Hello');
   var listToBeViewed = new NoteListView(list);
