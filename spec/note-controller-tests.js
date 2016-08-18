@@ -10,14 +10,15 @@ noteControllerCanBeInstantiated();
 
 function noteListCanBeViewedAsHTMLString() {
   var controller = new Controller();
-  var list = new NotesList();
-  list.createNote("I am a note");
-  var list_view = new NoteListView(list);
-  var htmlString = list_view.getView();
-  var element = document.createElement('div');
-  var document = { getElementById: element }
-
-  if (document.getElementById !== element) {
+  controller.displayNotes();
+  var element = document.createElement('div',{id: "app"})
+  // console.log(element)
+  document.getElementById = function(){
+    return element;
+  };
+  console.log(element);
+  console.log((document.getElementById()).innerHTML);
+  if (document.getElementById().innerHTML !== "<ul><li><div>I am a note</div></li></ul>") {
     throw new Error ("Note list is not in page in HTML");
   }
 }
